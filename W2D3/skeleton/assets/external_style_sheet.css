@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#748BA7, #051B38);
+  color: #D4916A;
+  cursor: url(skull.png), auto;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+
+.ingredients-list {
+  list-style: square inside;
+}
+
+ol {
+  list-style: square inside url("logo-emblem-red-1000-1-.jpg");
+}
+
+header > img {
+  width: 100px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: inherit;
+}
