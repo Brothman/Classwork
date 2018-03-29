@@ -1,0 +1,3 @@
+class StackQueue
+  
+end
