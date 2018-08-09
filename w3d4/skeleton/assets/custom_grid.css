@@ -1,0 +1,15 @@
+/* PUT FLUID GRID CODE HERE */
+
+main {
+  width: 75%
+}
+
+aside {
+  width: 25%
+}
+
+@media all and (max-width: 900px) {
+  [class='col-'] {
+    width: 100%
+  }
+}
