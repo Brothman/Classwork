@@ -1,0 +1,21 @@
+input[type=submit]{
+  font-size: 50px;
+  border-width: 10px;
+  border-color: rgb(255,100,150);
+  border-style: groove;
+  background-color: aquamarine;
+  color: rgb(150,100,255);
+  font-family: cursive;
+}
+
+input[type=text]{
+  background-color: rgb(255,100,150);
+  border-color: aquamarine;
+  border-width: 3px;
+  border-style: ridge;
+  color: yellow;
+}
+
+body{
+  background-color: lime;
+}

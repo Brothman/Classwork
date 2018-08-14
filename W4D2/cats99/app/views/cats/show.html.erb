@@ -1,0 +1,28 @@
+<%= render @cat %>
+<form class="" action="<%= cat_url(@cat) %>" method="post">
+  <input type="hidden" name="_method" value="delete"/>
+  <input type="submit" value="Delete this poor kitty"/>
+</form>
+
+<% @cat.cat_rental_requests.order(:start_date).each do |crr| %>
+<p>
+  Start Date:  <%= crr.start_date %>
+  <br>
+  End Date: <%= crr.end_date %>
+  <br>
+  Status: <%= crr.status %>
+  <br>
+  <% if crr.status == "PENDING" %>
+    <form class="" action=" <%= approve_cat_rental_request_url(crr) %> " method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input type="submit" name="" value="APPROVED">
+    </form>
+    <form class="" action=" <%= deny_cat_rental_request_url(crr) %> " method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input type="submit" name="" value="DENIED">
+    </form>
+  <% end %>
+
+  <br>
+</p>
+<% end %>

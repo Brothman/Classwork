@@ -1,0 +1,32 @@
+<% if edit %>
+  <% action = cat_url(cat) %>
+  <% submit_text = "Edit a cat" %>
+<% else %>
+  <% cat = Cat.new %>
+  <% action = cats_url %>
+  <% submit_text = "Create a cat" %>
+<% end %>
+
+
+<form class="" action= <%= action %> method="post">
+  <% if edit %>
+    <input type = "hidden" name="_method" value="patch"></input>
+  <% end %>
+  <label> Date
+    <input type="date" name= "cat[birth_date]" value= <%= cat.birth_date %> >
+  </label>
+  <label> Color
+    <input type="text" name="cat[color]" value=<%= cat.color %>>
+  </label>
+  <label> Name
+    <input type="text" name="cat[name]" value=<%= cat.name %>>
+  </label>
+  <label> Sex
+    <input type="text" name="cat[sex]" value=<%= cat.sex %>>
+  </label>
+  <label> Description
+    <input type="text" name="cat[description]" value="<%= cat.description %>">
+  </label>
+
+  <input type="submit" value=" <%= submit_text %>"> </input>
+</form>
