@@ -1,1 +1,5 @@
 <p>Band Name: <%= @band.name %> </p>
+<h1> Albums </h1>
+<% albums = Album.where(band_id: @band.id) %>
+<%= render albums %>
+<%= button_to 'Create an Album', new_band_album_url(@band), method: :get %>

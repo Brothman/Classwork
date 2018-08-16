@@ -1,1 +1,6 @@
+
 <%= render @album %>
+<form class="" action=" <%= edit_album_url(@album) %> " method="get">
+  <input type="submit" name="" value="Edit Album">
+</form>
+<%= button_to "Delete Album", album_url(@album), method: :delete %>
