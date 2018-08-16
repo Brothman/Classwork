@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       login!(user)
       redirect_to user_url(user)
     else
-      flash.now[:errors] << user.errors.full_messages
+      flash.now[:errors] = user.errors.full_messages
       #will change url, but I get to maintain the data I already inputted on the form
       render :new
     end
@@ -21,8 +21,8 @@ class UsersController < ApplicationController
   #Show a specific user
   def show
     #Use the id wildcard in the url to find the user
-    @user = User.find(params[:id])
-    if user
+    @user = User.find_by(id: params[:id])
+    if @user
       render :show
       #if invalid wildcard :id
     else
