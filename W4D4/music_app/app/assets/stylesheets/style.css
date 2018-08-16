@@ -31,3 +31,11 @@ header p {
   flex-direction: column;
   justify-content: center;
 }
+
+.band_show_a {
+  margin-bottom: 10px;
+}
+
+.button_to {
+  margin-top: 10px;
+}
