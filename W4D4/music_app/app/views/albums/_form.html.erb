@@ -1,0 +1,33 @@
+<% if action == :edit %>
+  <% url = album_url(album) %>
+  <% submit_button_label = "Edit Album" %>
+<% else  %>
+  <% url = albums_url %>
+  <% submit_button_label = "Create Album" %>
+  <% album = Album.new %>
+<% end %>
+
+<form class="" action=" <%= url %> " method="post">
+  <% if action == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% else  %>
+    <input type="hidden" name="album[band_id]" value=" <%= band_id %> ">
+  <% end  %>
+  <%= auth_token %>
+  <label> Title
+    <input type="text" name="album[title]" value=" <%= album.title %> ">
+  </label>
+  <label> Year
+    <input type="text" name="album[year]" value=" <%= album.year %> ">
+  </label>
+  <label> Style
+    <select class="" name="album[style]">
+      <option value="Studio">Studio</option>
+      <option value="Live">Live</option>
+    </select>
+  </label>
+  <input type="submit" name="" value=" <%= submit_button_label %> ">
+  <% if action == :edit %>
+    <%= button_to 'Delete Album', album_url(band), method: :delete %>
+  <% end  %>
+</form>

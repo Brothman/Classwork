@@ -31,7 +31,7 @@ class BandsController < ApplicationController
   def update
     @band = Band.find_by(id: params[:id])
 
-    if band.update
+    if band.update(band_params)
       redirect_to band_url(band)
     else
       flash.now[:errors] = band.errors.full_messages
@@ -41,6 +41,7 @@ class BandsController < ApplicationController
 
   def destroy
     Band.destroy(params[:id])
+    redirect_to bands_url
   end
 
   def band_params
