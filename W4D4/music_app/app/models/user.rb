@@ -14,10 +14,10 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :email, :session_token, presence: true, uniqueness: true
 
-  before_validation :ensure_session_token
+  after_initialize :ensure_session_token
 
   def self.generate_session_token
-
+    SecureRandom::urlsafe_base64(16)
   end
 
   def self.find_by_credentials(email, password)
