@@ -27,7 +27,12 @@
     </select>
   </label>
   <input type="submit" name="" value=" <%= submit_button_label %> ">
-  <% if action == :edit %>
-    <%= button_to 'Delete Album', album_url(band), method: :delete %>
-  <% end  %>
+
+  <!-- <% if action == :edit %>
+    <form class="" action=" <%= album_url(album) %> " method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" name="" value="Delete This Album">
+    </form>
+  <% end  %> -->
+
 </form>

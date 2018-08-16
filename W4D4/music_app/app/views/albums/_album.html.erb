@@ -1,4 +1,4 @@
 <p>Title: <%= album.title %> </p>
 <p>Year: <%= album.year %> </p>
 <p>Style: <%= album.style %> </p>
-<p>Band: <%= Band.find(album.band_id) %> </p>
+<p>Band: <%= Band.find(album.band_id).name %> </p>

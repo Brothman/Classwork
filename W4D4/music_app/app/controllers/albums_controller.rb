@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   def new
     #I have to pass the band_id to the album as a hidden value in the field
+    @band_id = params[:band_id]
     render :new
   end
 
@@ -8,7 +9,7 @@ class AlbumsController < ApplicationController
     album = Album.new(album_params)
 
     if album.save
-      redirect_to albums_url
+      redirect_to album_url(album)
     else
       flash.now[:errors] = album.errors.full_messages
       render :new
@@ -36,12 +37,13 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    Album.destroy(params[:id])
-    redirect_to albums_url
+    album = Album.find(params[:id])
+    album.destroy
+    redirect_to band_url(album.band_id)
   end
 
   private
   def album_params
-    params.require(:album).permit(:title, :year, :style)
+    params.require(:album).permit(:title, :year, :style, :band_id)
   end
 end
