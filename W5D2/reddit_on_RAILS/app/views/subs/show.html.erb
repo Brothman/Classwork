@@ -1,0 +1,7 @@
+<!-- <h1>You Are Inside The Sub</h1>
+<%= render @sub %> -->
+
+<h1> <%= @sub.title %> </h1>
+<p> <%= @sub.description %> </p>
+<%= render @sub.posts %>
+<a href=" <%= new_post_url %> "> Create a Post </a>

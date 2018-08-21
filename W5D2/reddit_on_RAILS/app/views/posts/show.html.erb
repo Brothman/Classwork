@@ -1,0 +1,4 @@
+<p>Description: <%= @post.content %> </p>
+
+<h1>Comments</h1>
+<%= render @post.comments.where(parent_comment_id: nil) %>

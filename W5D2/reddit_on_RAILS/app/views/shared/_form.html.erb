@@ -1,0 +1,16 @@
+<% button_value = (path == users_url) ? 'Create Account' : 'Log In' %>
+
+<form class="" action= "<%= path %>" method="post">
+  <%# debugger %>
+  <%= auth_token %>
+
+  <label for="">Username
+    <input type="text" name="user[username]" value="<%= @user.username %>">
+  </label>
+
+  <label for="">Password
+    <input type="password" name="user[password]" value="">
+  </label>
+
+  <input type="submit" name="" value= "<%= button_value %>" >
+</form>

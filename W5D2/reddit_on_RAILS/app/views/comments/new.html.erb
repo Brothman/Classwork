@@ -1,0 +1,11 @@
+<form class="" action= "<%= comments_url %>" method="post">
+  <%= auth_token %>
+
+  <label for="">Reply
+    <textarea name="comment[content]" rows="4" cols="40"> <%= @comment.content %> </textarea>
+  </label>
+
+  <input type="hidden" name="comment[post_id]" value="<%= @comment.post_id %>">
+
+  <input type="submit" name="" value= "Create Comment" >
+</form>

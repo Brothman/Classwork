@@ -1,0 +1,24 @@
+
+  <h2>I am a comment</h2>
+  <p> Content: <%= comment.content %> </p>
+  <p> Created by: <%= comment.author.username %>  </p>
+
+
+  <form class="" action= "<%= comments_url %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="comment[post_id]" value= "<%= comment.post_id %>" >
+    <input type="hidden" name="comment[parent_comment_id]" value="<%= comment.id %>">
+    <label> Reply
+      <textarea name="comment[content]" rows="1" cols="40"></textarea>
+    </label>
+    <input type="submit" name="" value="Submit Reply">
+  </form>
+
+<h3 class="replies" >Replies</h3>
+<div style="display:flex;">
+  <div style= "width: 50px;">
+  </div>
+  <div class="">
+    <%= render comment.child_comments %>
+  </div>
+</div>

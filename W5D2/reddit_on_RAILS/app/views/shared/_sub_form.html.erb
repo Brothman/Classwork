@@ -1,0 +1,20 @@
+<% button_value = (path == subs_url) ? 'Create Sub' : 'Edit Sub' %>
+
+<form class="" action= "<%= path %>" method="post">
+
+  <%= auth_token %>
+  <% if path != subs_url %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+
+
+  <label for="">Title
+    <input type="text" name="sub[title]" value="<%= sub.title %>">
+  </label>
+
+  <label for="">Description
+    <textarea name="sub[description]" rows="4" cols="40"><%= sub.description %></textarea>
+  </label>
+
+  <input type="submit" name="" value= "<%= button_value %>" >
+</form>
