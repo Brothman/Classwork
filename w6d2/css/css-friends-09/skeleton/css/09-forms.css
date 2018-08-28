@@ -1,0 +1,38 @@
+/* PHASE 9: Forms */
+.create-post {
+  display: flex;
+}
+
+.post-thumb {
+  min-width: 58px;
+  margin-right: 10px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  width: 90%;
+  font-family: sans-serif;
+}
+
+.input input {
+  display: flex;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.input textarea {
+  display:flex;
+  background-color: white;
+  width: 80%;
+  min-height: 150px;
+  resize: none;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.input label:first-child {
+  margin-top: 25px;
+}
