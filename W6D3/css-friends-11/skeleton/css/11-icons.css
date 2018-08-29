@@ -1,0 +1,61 @@
+/* PHASE 11: Icons */
+[class*="icon-"] {
+  background-image: url(https://github.com/appacademy/curriculum/blob/master/html-css/micro-projects/css-friends/docs/images/sprite.png?raw=true);
+  background-size: 25px 250px;
+  display: inline-block;
+  width: 25px;
+  height: 0;
+  overflow: hidden;
+  padding-top: 25px;
+
+}
+
+.icon-comment {
+  background-position: 0px 0px;
+}
+
+.icon-reblog {
+  background-position: 0px 148px;
+}
+
+.icon-favorite {
+  background-position: 0px 200px;
+}
+
+.icon-comment:hover {
+  background-position: 0px 225px;
+}
+
+.icon-reblog:hover {
+  background-position: 0px 123px;
+}
+
+.icon-favorite:hover {
+  background-position: 0px 175px;
+}
+
+[class*='icon-small-'] {
+  background-image: url(https://github.com/appacademy/curriculum/blob/master/html-css/micro-projects/css-friends/docs/images/sprite.png?raw=true);
+  background-size: 25px 250px;
+  display: inline-block;
+  width: 25px;
+  height: 0;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.icon-small-wall {
+  background-position: 0px 27.5px;
+}
+
+.icon-small-about {
+  background-position: 0px 78.5px;
+}
+
+.icon-small-friends{
+  background-position: 0px 102.5px;
+}
+
+.icon-small-photos {
+  background-position: 0px 53px;
+}
